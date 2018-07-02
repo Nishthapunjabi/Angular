@@ -25,83 +25,17 @@
     </mat-card>
   </div>
 
-  <div fxFlex="40" *ngIf="dish">
-    <mat-card >
-      <mat-card-header>
-          <h2>Comments</h2>
-        <mat-card-title>
-          
-        </mat-card-title>
-      </mat-card-header>
-      
-      <mat-card-content>
-
-  <mat-list  >
-      <mat-list-item >
-        
-        <h1 matLine style = " font-weight: bold;"> {{dish.comments[0].comment}} </h1>
-        <p matLine style = " font-weight: bold;">
-          <span> {{dish.comments[0].rating}} Stars </span>
+  <div fxFlex="40" >
+    <mat-list *ngIf="dish">
+      <h3>comments</h3>
+      <mat-list-item *ngFor="let comment of dish.comments">
+        <h4 mat-line style = " font-weight: bold;">{{comment.comment}}</h4>
+        <p mat-line style = " font-weight: bold;">{{comment.rating}} Stars</p>
+        <p mat-line style = " font-weight: bold;">
+          <span>-- {{comment.author}} {{comment.date | date}}</span>
         </p>
-        <p matLine style = " font-weight: bold;">
-            <span> -- {{dish.comments[0].author}} {{ dish.comments[0].date | date }} </span>
-          </p>
       </mat-list-item>
     </mat-list>
-    <mat-list >
-        <mat-list-item >
-          
-          <h1 matLine style = " font-weight: bold;"> {{dish.comments[1].comment}} </h1>
-          <p matLine style = " font-weight: bold;">
-            <span> {{dish.comments[1].rating}} Stars </span>
-          </p>
-          <p matLine style = " font-weight: bold;">
-              <span> -- {{dish.comments[1].author}} {{ dish.comments[1].date | date }} </span>
-            </p>
-        </mat-list-item>
-      </mat-list>
-      <mat-list>
-          <mat-list-item >
-            
-            <h1 matLine style = " font-weight: bold;"> {{dish.comments[2].comment}} </h1>
-            <p matLine style = " font-weight: bold;">
-              <span> {{dish.comments[2].rating}} Stars </span>
-            </p>
-            <p matLine style = " font-weight: bold;">
-                <span> -- {{dish.comments[2].author}} {{ dish.comments[2].date | date }} </span>
-              </p>
-          </mat-list-item>
-        </mat-list>
-        
-            <mat-list >
-                <mat-list-item >
-                  
-                  <h1 matLine style = " font-weight: bold;"> {{dish.comments[3].comment}} </h1>
-                  <p matLine style = " font-weight: bold;">
-                    <span> {{dish.comments[3].rating}} Stars </span>
-                  </p>
-                  <p matLine style = " font-weight: bold;">
-                      <span> -- {{dish.comments[3].author}} {{ dish.comments[3].date | date }} </span>
-                    </p>
-                </mat-list-item>
-              </mat-list>
-            
-          <mat-list >
-              <mat-list-item >
-                
-                <h1 matLine style = " font-weight: bold;"> {{dish.comments[4].comment}} </h1>
-                <p matLine style = " font-weight: bold;">
-                  <span> {{dish.comments[4].rating}} Stars </span>
-                </p>
-                <p matLine style = " font-weight: bold;">
-                    <span> -- {{dish.comments[4].author}} {{ dish.comments[4].date | date }} </span>
-                  </p>
-              </mat-list-item>
-            </mat-list>
-        
-      </mat-card-content>
-      
-    </mat-card>
   </div>
 
 </div>
