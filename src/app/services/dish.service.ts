@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
-import { Observable, of } from 'rxjs';
+import {Observable} from 'rxjs'
 import { delay } from 'rxjs/operators';
+
+import { of } from 'rxjs';
+
+
+
 @Injectable()
 export class DishService {
 
   constructor() { }
-  
+  getDishIds(): Observable<number[] | any> {
+    return of(DISHES.map(dish => dish.id ));
+  }
   getDishes(): Observable<Dish[]> {
     return of(DISHES).pipe(delay(2000));
   }
